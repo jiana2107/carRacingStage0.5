@@ -1,4 +1,5 @@
 var canvas, backgroundImage;
+var allPlayers,distance=0;
 
 var gameState = 0;
 var playerCount;
@@ -6,6 +7,10 @@ var playerCount;
 var database;
 
 var form, player, game;
+
+function preload(){
+  backgroundImage=loadImage("images/background.jpg")
+}
 
 
 function setup(){
@@ -18,4 +23,15 @@ function setup(){
 
 
 function draw(){
+  background(255)
+
+  if(playerCount==4){
+    game.update(1)
+  }
+
+  if(gameState==1){
+    clear()
+    game.play()
+  }
+
 }
